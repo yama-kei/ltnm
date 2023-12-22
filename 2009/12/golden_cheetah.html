@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta name="generator" content="Movable Type 3.36" />
+
+   <link rel="stylesheet" href="http://www.yama-kei.org/local_train_nakameguro/styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="http://www.yama-kei.org/local_train_nakameguro/atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.yama-kei.org/local_train_nakameguro/index.xml" />
+
+   <title>Golden Cheetah 日本語化 (鈍行・中目黒の自転車メモ)</title>
+
+   <link rel="start" href="http://www.yama-kei.org/local_train_nakameguro/" title="Home" />
+   <link rel="prev" href="http://www.yama-kei.org/local_train_nakameguro/2009/12/post_94.html" title="クロスバイク再考" />
+   <link rel="next" href="http://www.yama-kei.org/local_train_nakameguro/2009/12/post_95.html" title="息抜きメディオ走・再び" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://www.yama-kei.org/local_train_nakameguro/2009/12/golden_cheetah.html"
+    trackback:ping="http://www.yama-kei.org/mt/mt-tb.cgi/6959"
+    dc:title="Golden Cheetah 日本語化"
+    dc:identifier="http://www.yama-kei.org/local_train_nakameguro/2009/12/golden_cheetah.html"
+    dc:subject="日々のつぶやき"
+    dc:description="新しいMac環境で使い始めているトレーニングログの管理ソフトのGolden Ch..."
+    dc:creator="yama-kei"
+    dc:date="2009-12-18T08:25:40+09:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="http://www.yama-kei.org/local_train_nakameguro/mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="http://www.yama-kei.org/local_train_nakameguro/" accesskey="1">鈍行・中目黒の自転車メモ</a></h1>
+               <h2 id="banner-description"></h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="http://www.yama-kei.org/local_train_nakameguro/2009/12/post_94.html">&laquo; クロスバイク再考</a> |
+                        <a href="http://www.yama-kei.org/local_train_nakameguro/">メイン</a>
+                        | <a href="http://www.yama-kei.org/local_train_nakameguro/2009/12/post_95.html">息抜きメディオ走・再び &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">Golden Cheetah 日本語化</h2>
+                     <div class="entry" id="entry-6959">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p><a href="http://www.yama-kei.org/local_train_nakameguro/2009/11/building_goldencheetah_on_snow.html">新しいMac環境</a>で使い始めているトレーニングログの管理ソフトのGolden Cheetah。</p>
+
+<p><a href="http://www.yama-kei.org/local_train_nakameguro/golden_cheetah_ja.html" onclick="window.open('http://www.yama-kei.org/local_train_nakameguro/golden_cheetah_ja.html','popup','width=640,height=402,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://www.yama-kei.org/local_train_nakameguro/golden_cheetah_ja-thumb.png" width="320" height="201" alt="" /></a></p>
+
+<p>最近になって多言語化対応が入ってフランス語が追加されていたので、それを真似する形で日本語化にチャレンジ。GCはQTというフレームワークで作られたアプリなので他言語化の仕組みがなかなかよくできていて、コード内の文字列をtr("hogehoge")とかして囲んでおくと自動的に多言語化の対象として専用の翻訳ソフトに食わせられるフォーマットに抜き出してくれる。</p>
+
+<p>あとはこれをジャカジャカ翻訳して、プログラムバイナリに含めるリソースファイルの形にして、設定メニュー内で日本語を選べるようにコードをいじってやれば完成。</p>
+
+<p>・・・と思ったら、ほぼ同じタイミングで<a href="http://mitsukuni.org/blog/2009/12/16/goldencheetah%E6%97%A5%E6%9C%AC%E8%AA%9E%E5%8C%96%E3%83%A1%E3%83%A2/">keyさんも翻訳してた</a>。みんな考えることは同じなのね・・・。</p>
+
+<p>早速keyさんがパッチをMLに送ってくれたので、次あたりにリリースされるGCには日本語対応が入るはず。文法的に訳すのが苦しかったり、日本では使われていないトレーニング単語を訳すのはなかなか厳しいものがあるとはいえ、日本語化されていることで日本のユーザーの導入の壁は大きく下がるはず。</p>
+
+<p>それにしても、こういう開発のスピード感はよいですね。ニッチだけど熱意のある人が集まったオープンソースプロジェクトは強いです。</p>
+
+<p>＊＊</p>
+
+<p>対照的なのが定番のパワートレーニング管理ツールのTraining Peaks WKO+。<br />
+ちょうどバージョン3にあがったというメールが来たので調べてみたのだけど、全体的にブラッシュアップされただけで、そこまで進化した形跡はないみたい。バージョンアップ代が$64.50なのだけど、これはちょっと躊躇してしまうなぁ。。。</p>
+
+<p>確かによくできたツールだし、全体的な完成度でいったらGCとは比べ物にならないレベルに達してはいるとは思うけど、ちょっと殿様商売し過ぎなんじゃないという感じ。</p>
+                           </div>
+                           
+                                        
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  投稿者: <a href="http://www.yama-kei.org">yama-kei</a> 日時: 2009&#24180;12&#26376;18&#26085; 08:25
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="http://www.yama-kei.org/local_train_nakameguro/2009/12/golden_cheetah.html">パーマリンク</a>
+                        </p>
+                     </div>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-7948296006321133";
+/* 728x15, 作成済み 09/09/04 */
+google_ad_slot = "2400213415";
+google_ad_width = 728;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br>
+
+                                          <div class="trackbacks">
+                        <h3 id="trackback" class="trackbacks-header">トラックバック</h3>
+                        <div id="trackbacks-info">
+                           <p>このエントリーのトラックバックURL: <br />http://www.yama-kei.org/mt/mt-tb.cgi/6959</p>
+                        </div>
+                        
+                     </div>
+                     
+
+                                          <div id="comments" class="comments">
+                                                                                 <div class="comments-content">
+                                 <h3 class="comments-header">コメント (2)</h3>
+                           
+                                 <a id="c000257"></a>
+                                 <div class="comment" id="comment-257">
+                                    <div class="comment-inner">
+                                       <div class="comment-header">
+                                          <a href="http://mitsukuni.org" rel="nofollow">key</a>:
+                                       </div>
+                                       <div class="comment-content">
+                                          <p>どうも〜<br />
+考えることはみんな同じですねw</p>
+
+<p>日本語化パッチは先程HEADに取り込まれました。<br />
+本体側にもいくつか手を入れて(tr()を追加して)いるので、<br />
+ひょっとしたら日本語環境でのみ発生するバグが出てくるかも知れません。</p>
+
+<p>国際化できていない部分をいくつか探して修正してもらえるように依頼してみました。<br />
+かなり言葉足らずで通じているか謎ですが、まあ頑張ってみますw</p>
+
+<p>WKO+は複数台(2台？)にインストール出来るようになった点が良いと思いますが、<br />
+どちらにしろMacで使えないので眼中にありません。</p>
+                                       </div>
+                                       <p class="comment-footer">
+                                          投稿者:
+                                          <a href="http://mitsukuni.org" rel="nofollow">key</a>  |
+                                          <a href="#comment-257">2009&#24180;12&#26376;18&#26085; 09:35</a>
+                                       </p>
+                                       <p class="comment-footer-experimental">
+                                          日時:
+                                          <a href="#comment-257" title="このコメントへのパーマリンク">2009&#24180;12&#26376;18&#26085; 09:35</a>
+                                       </p>
+                                    </div>
+                                 </div>
+                           
+                                                   
+                                 <a id="c000259"></a>
+                                 <div class="comment" id="comment-259">
+                                    <div class="comment-inner">
+                                       <div class="comment-header">
+                                          yama-kei:
+                                       </div>
+                                       <div class="comment-content">
+                                          <p>Golden Cheetahのこれからに期待、ですね。<br />
+お疲れ様でした。</p>
+
+<p>日本語版使ってて気になるところがあったら横から手を加えさせていただくかも。</p>
+                                       </div>
+                                       <p class="comment-footer">
+                                          投稿者:
+                                          yama-kei  |
+                                          <a href="#comment-259">2009&#24180;12&#26376;18&#26085; 16:12</a>
+                                       </p>
+                                       <p class="comment-footer-experimental">
+                                          日時:
+                                          <a href="#comment-259" title="このコメントへのパーマリンク">2009&#24180;12&#26376;18&#26085; 16:12</a>
+                                       </p>
+                                    </div>
+                                 </div>
+                                                         </div>
+                           
+                        
+
+                         
+                        <form method="post" action="http://www.yama-kei.org/mt/mt-comments.cgi" name="comments_form" onsubmit="if (this.bakecookie.checked) rememberMe(this)">
+                           <input type="hidden" name="static" value="1" />
+                           <input type="hidden" name="entry_id" value="6959" />
+                           
+                           <div class="comments-open" id="comments-open">
+                              <h2 class="comments-open-header">コメントを投稿</h2>
+                              
+                              <div class="comments-open-content">
+                                 <script type="text/javascript">
+                                 <!--
+                                 writeTypeKeyGreeting(commenter_name, 6959);
+                                 //-->
+                                 </script>
+                              
+                                 
+
+                                 <div id="comments-open-data">
+                                    <div id="name-email">
+                                       <p>
+                                          <label for="comment-author">名前:</label>
+                                          <input id="comment-author" name="author" size="30" />
+                                       </p>
+                                       <p>
+                                          <label for="comment-email">メールアドレス:</label>
+                                          <input id="comment-email" name="email" size="30" />
+                                       </p>
+                                    </div>
+
+                                    <p>
+                                       <label for="comment-url">URL:</label>
+                                       <input id="comment-url" name="url" size="30" />
+                                    </p>
+                                    <p>
+                                       <label for="comment-bake-cookie"><input type="checkbox"
+                                          id="comment-bake-cookie" name="bakecookie" onclick="if (!this.checked) forgetMe(document.comments_form)" value="1" />
+                                          この情報を登録しますか?</label>
+                                    </p>
+                                 </div>
+
+                                 <p id="comments-open-text">
+                                    <label for="comment-text">コメント: </label>
+                                    <textarea id="comment-text" name="text" rows="15" cols="50"></textarea>
+                                 </p>
+                                 <div id="comments-open-footer" class="comments-open-footer">
+                                    <input type="submit" accesskey="v" name="preview" id="comment-preview" value="確認" />
+                                    <input type="submit" accesskey="s" name="post" id="comment-post" value="投稿" />
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                        
+                     </div>
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">検索</h2>
+                         <div class="module-content">
+                            <form method="get" action="http://www.yama-kei.org/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="12" />
+                               <label for="search" accesskey="4">ブログを検索: </label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="検索" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">2009&#24180;12&#26376;18&#26085; 08:25に投稿されたエントリーのページです。</p>
+                             <p>ひとつ前の投稿は「<a href="http://www.yama-kei.org/local_train_nakameguro/2009/12/post_94.html">クロスバイク再考</a>」です。</p>
+
+                             <p>次の投稿は「<a href="http://www.yama-kei.org/local_train_nakameguro/2009/12/post_95.html">息抜きメディオ走・再び</a>」です。</p>
+
+                             <p>他にも多くのエントリーがあります。<a href="http://www.yama-kei.org/local_train_nakameguro/">メインページ</a>や<a href="http://www.yama-kei.org/local_train_nakameguro/archives.html">アーカイブページ</a>も見てください。</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="http://www.yama-kei.org/local_train_nakameguro/atom.xml">このブログのフィードを取得</a><br />
+                            [<a href="http://www.sixapart.jp/about/feeds">フィードとは</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.jp/movabletype/">Movable Type 3.36</a>
+                         </div>
+                      </div>
+
+                      <div class="module-content">
+おすすめ自転車関連本
+<SCRIPT charset="utf-8" type="text/javascript" src="http://ws.amazon.co.jp/widgets/q?ServiceVersion=20070822&MarketPlace=JP&ID=V20070822/JP/pastelcoloure-22/8001/2a48a3a9-c2dc-4b41-902c-9afcbf702492"> </SCRIPT> <NOSCRIPT><A HREF="http://ws.amazon.co.jp/widgets/q?ServiceVersion=20070822&MarketPlace=JP&ID=V20070822%2FJP%2Fpastelcoloure-22%2F8001%2F2a48a3a9-c2dc-4b41-902c-9afcbf702492&Operation=NoScript">Amazon.co.jp ウィジェット</A></NOSCRIPT>
+</div><script type="text/javascript"><!--
+google_ad_client = "pub-7948296006321133";
+/* 160x600, 作成済み 09/06/03 */
+google_ad_slot = "9835747242";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9164977-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>

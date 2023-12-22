@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta name="generator" content="Movable Type 3.36" />
+
+   <link rel="stylesheet" href="http://www.yama-kei.org/local_train_nakameguro/styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="http://www.yama-kei.org/local_train_nakameguro/atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.yama-kei.org/local_train_nakameguro/index.xml" />
+
+   <title>鈍行・中目黒の自転車メモ: サイクルコンピューター アーカイブ</title>
+</head>
+<body class="layout-two-column-right category-archive">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="http://www.yama-kei.org/local_train_nakameguro/" accesskey="1">鈍行・中目黒の自転車メモ</a></h1>
+               <h2 id="banner-description"></h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+                     
+                     <p class="content-nav">
+                        <a href="http://www.yama-kei.org/local_train_nakameguro/">メイン</a>
+                     </p>
+                     <h2 id="archive-title">サイクルコンピューター アーカイブ</h2>
+                     
+                                          <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://www.yama-kei.org/local_train_nakameguro/cat92/index.html#007042"
+    trackback:ping="http://www.yama-kei.org/mt/mt-tb.cgi/7042"
+    dc:title="Edge 705の走行データ(dat)をTCXファイルに変換"
+    dc:identifier="http://www.yama-kei.org/local_train_nakameguro/cat92/index.html#007042"
+    dc:subject="サイクルコンピューター"
+    dc:description="5/5の富士山一周以来Edge 705が不調。 詳細は改めてまとめるとして、Ed..."
+    dc:creator="yama-kei"
+    dc:date="2010-05-07T09:19:19+09:00" />
+</rdf:RDF>
+-->
+
+
+                     <h2 class="date-header">2010&#24180;05&#26376;07&#26085;</h2>
+                     <a id="a007042"></a>
+                     <div class="entry" id="entry-7042">
+                        <h3 class="entry-header">Edge 705の走行データ(dat)をTCXファイルに変換</h3>
+                        <div class="entry-content">
+                                                            <div class="entry-body">
+                                 <p>5/5の富士山一周以来Edge 705が不調。<br />
+詳細は改めてまとめるとして、Edge 705の走行データ(dat)をTCXファイルに変換するテクニックをマスターしたのでまとめてみる。</p>
+
+<p>＊＊</p>
+
+<p>Edge 705の走行データは本来PCに繋いだタイミングでTCX形式に変換されて閲覧可能な状態になるのだけど、それがうまくいかなかった場合は/Garmin/History/Laps ディレクトリ内に残されたdatファイルを以下の方法を使ってtcxファイルとしてねつ造することができる。</p>
+
+<p>1. まともな.tcxファイルを持って来てテキストエディターで開き、最初の"Track"要素から最後に"Track"要素が閉じられるまでの部分を削除。これをtcxファイルのテンプレートとして保存。<br />
+2. 遺された.datファイル(Lap1.dat、Lap2.dat・・・)をテキストエディターで開いて内容をコピーして、上のテンプレートの"Track"要素があったところにペースト。<br />
+3. "Activity"要素内の"Id"と"Lap StartTime"のタイムスタンプをペーストした"Track"の最初に出てくる"Time"要素内のタイムスタンプに合わせる</p>
+
+<p>これでWKO+やGCで読み込み可能なTCXファイルとして利用可能になる。<br />
+TCXファイルの先頭部分に書かれた概要は、Edge 705側で集計した平均値や走行距離・時間。WKO+やGCでは生の走行データから独自に平均値や走行距離・時間を算出するので、テンプレートの先頭部分の概要データはいじらなくても問題は出ない。というか、これこそがEdge 705側の数値とPCにダウンロード後の数値が噛み合ない問題の元凶。</p>
+
+<p>元ネタは<a href="https://forums.garmin.com/showpost.php?p=3911&postcount=2">こちら</a>。</p>
+
+<p>＊＊</p>
+
+<p>自分の理解だと、Edge 705のデータ保存は以下のようなノリで行われる。</p>
+
+<p>1. 走行中のログは、内蔵フラッシュでもmicroSDでもないユーザが触れない内部フラッシュに保存される。</p>
+
+<p>2. Lapが切られるか、Resetがかけられたタイミングで内蔵フラッシュのLapsディレクトリ内に生のラップ走行情報(.datファイル(TCXのサブセット形式(Trackタグの中身だけ)))が保存される。走行データの概要は、内部フラッシュに保存される。</p>
+
+<p>3. PCにUSBマススト接続されると、内部フラッシュの概要とLapsディレクトリ内の生ログとを組み合わせた形でTCXファイルが生成され、成功した場合はLapsディレクトリ内のデータは消去される。</p>
+
+<p>突然の電源断があった際にTrackpointタグの中身が不定の位置で壊れてることを考えると、走行中の内部フラッシュへの保存もTCXのサブセット形式で行われている可能性が高そう。</p>
+
+<p>Edge 500でTCXをやめて独自のバイナリフォーマットに戻したことを考えると、やはりこの手の組み込みデバイスでXMLを使うのはいろいろ大変だったんだろうなーと推測。</p>
+                              </div>
+                              
+                              
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  投稿者: <a href="http://www.yama-kei.org">yama-kei</a> 日時: 2010&#24180;05&#26376;07&#26085; 09:19
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="http://www.yama-kei.org/local_train_nakameguro/2010/05/edge_705dattcx.html">パーマリンク</a>
+                           | <a href="http://www.yama-kei.org/local_train_nakameguro/2010/05/edge_705dattcx.html#comments">コメント (0)</a>
+                           | <a href="http://www.yama-kei.org/local_train_nakameguro/2010/05/edge_705dattcx.html#trackback">トラックバック (0)</a>
+                        </p>
+                     </div>
+                                          <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://www.yama-kei.org/local_train_nakameguro/cat92/index.html#007043"
+    trackback:ping="http://www.yama-kei.org/mt/mt-tb.cgi/7043"
+    dc:title="Edge 705 が不調"
+    dc:identifier="http://www.yama-kei.org/local_train_nakameguro/cat92/index.html#007043"
+    dc:subject="サイクルコンピューター"
+    dc:description="2008年の8月に導入して以来、自分の自転車ライフを大いに盛り上げて来てくれたE..."
+    dc:creator="yama-kei"
+    dc:date="2010-05-08T18:21:31+09:00" />
+</rdf:RDF>
+-->
+
+
+                     <h2 class="date-header">2010&#24180;05&#26376;08&#26085;</h2>
+                     <a id="a007043"></a>
+                     <div class="entry" id="entry-7043">
+                        <h3 class="entry-header">Edge 705 が不調</h3>
+                        <div class="entry-content">
+                                                            <div class="entry-body">
+                                 <p>2008年の8月に導入して以来、自分の自転車ライフを大いに盛り上げて来てくれたEdge 705が壊れた。</p>
+
+<p><a href="http://www.yama-kei.org/local_train_nakameguro/P5086446.html" onclick="window.open('http://www.yama-kei.org/local_train_nakameguro/P5086446.html','popup','width=640,height=480,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://www.yama-kei.org/local_train_nakameguro/P5086446-thumb.jpg" width="320" height="240" alt="" /></a></p>
+
+<p>「壊れた」といっても全然駄目ってわけじゃなくて、「Edge 705本体の動作中に内蔵フラッシュにアクセスできない」という状態。不思議なことに、PCに繋げたときは普通にマウントできて読み書きもできる。</p>
+
+<p>先日の富士山一周サイクリングの最中に「内蔵メモリーが一杯だからLAP情報を保存できないよ」的なエラーが表示されて、そのまま使っていたら途中で一回ハングして、それでも気にせずに使い続けてサイクリングを終了。で、家に帰って来てパソコンに繋げてログデータを吸い出そうとしたところ、TCXファイルへの変換が行われない・・・。</p>
+
+<p>この症状は前に何回か経験済みで、</p>
+
+<p>1. HISTORY/LAPSディレクトリ内のファイルが壊れている -> 読み出せないファイルを消す<br />
+2. 何かが根本的におかしくなっている -> ハードリセット</p>
+
+<p>といったあたりで解決できてきた。</p>
+
+<p>ケース1の場合はLAPSディレクトリ内のファイルがファイルシステム的におかしくなっている可能性が高いので、TCXへの変換待ちのファイル達をまず手元のHDDにコピー・・・と、普通に成功する。</p>
+
+<p>それでは・・・と空き容量をチェックすると、数十MBまで減っていることを発見。特に大きなファイルはないので、「やはりファイルシステムがおかしくなっているのに違いない」と考えて、内蔵フラッシュ内のファイルをバックアップしてからFAT32でフォーマットしてファイルを復活させる。</p>
+
+<p>「これで大丈夫でしょ」という期待もむなしく、TCXファイルへの変換は行われない。仕方がないのでハードリセットを実施。リセット後に設定し直すのが面倒なので最終手段だけど仕方がない。</p>
+
+<p>・・・と、それでもTCXファイルへの変換は行われない。<br />
+このあたりからいやーな予感がしはじめる。</p>
+
+<p>＊＊</p>
+
+<p>手元のEdge 705のファームウェアは安定動作していた2.90のままだったので、最新の3.10なら何か変化が起こるかも・・・と、webupdaterを使って3.10のファームウェアを入れてから再起動。ところがどっこい、本来なら発動するべきファームウェアの更新処理が始まらない。</p>
+
+<p>色々と試行錯誤した挙げ句、にmicroSDカードのGarminディレクトリ直下にファームウェアのファイル(gupdate.gcd)を置いてみたところ、3.10へのアップデートに成功。それでもTCXファイルが正しく変換されない問題は直らず。どうやらファームウェア側からmicroSDカードは正しく認識できているみたい。</p>
+
+<p>改めてフォーマットし直してみたりするものの、状況は好転せず、というのが現在の状況。内蔵フラッシュがPCからマウントできなくなる問題は割と頻繁に起きているようだけど、PCからマウントできるのにEdge 705本体側からマウントできないという問題はレアっぽい。</p>
+
+<p>＊＊</p>
+
+<p>気を取り直して、Edge 705本体側から内蔵フラッシュがマウントできない状況で発生する不都合をリストアップしてみると・・・</p>
+
+<p>- PCから閲覧可能な形でログが保存されない<br />
+ -> (本体側で概要は見られる)</p>
+
+<p>・・・以上！</p>
+
+<p>地図やWorkoutのメニュー、それにコースはmicroSDからでも読んでくれるので、これらに関しては問題なし。要するに、走ってる最中のスタンドアロン動作だけを考えればEdge 705の機能はフルに使えるってこと。そうは言っても、トレーニングやレースのログをPCにダウンロードして解析するのはEdge 705ユーザーにとっての大きな楽しみなんだよなー。</p>
+
+<p>Garminのサポートセンターに電話しても繋がる気配がなかったので、メールで質問を投げてみて現在待機中。前から導入を考えていたEdge 500もオーダーしたので、もしEdge 705が復活したら2台体勢にでいくことになりそう。</p>
+                              </div>
+                              
+                              
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  投稿者: <a href="http://www.yama-kei.org">yama-kei</a> 日時: 2010&#24180;05&#26376;08&#26085; 18:21
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="http://www.yama-kei.org/local_train_nakameguro/2010/05/edge_705_2.html">パーマリンク</a>
+                           | <a href="http://www.yama-kei.org/local_train_nakameguro/2010/05/edge_705_2.html#comments">コメント (0)</a>
+                           | <a href="http://www.yama-kei.org/local_train_nakameguro/2010/05/edge_705_2.html#trackback">トラックバック (0)</a>
+                        </p>
+                     </div>
+                                          <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://www.yama-kei.org/local_train_nakameguro/cat92/index.html#007048"
+    trackback:ping="http://www.yama-kei.org/mt/mt-tb.cgi/7048"
+    dc:title="Garmin Edge 500"
+    dc:identifier="http://www.yama-kei.org/local_train_nakameguro/cat92/index.html#007048"
+    dc:subject="サイクルコンピューター"
+    dc:description="不調のEdge 705からEdge 500に乗り換え。 705は2年近く使ってき..."
+    dc:creator="yama-kei"
+    dc:date="2010-05-19T21:33:45+09:00" />
+</rdf:RDF>
+-->
+
+
+                     <h2 class="date-header">2010&#24180;05&#26376;19&#26085;</h2>
+                     <a id="a007048"></a>
+                     <div class="entry" id="entry-7048">
+                        <h3 class="entry-header">Garmin Edge 500</h3>
+                        <div class="entry-content">
+                                                            <div class="entry-body">
+                                 <p>不調のEdge 705からEdge 500に乗り換え。</p>
+
+<p><a href="http://www.yama-kei.org/local_train_nakameguro/P5182807.html" onclick="window.open('http://www.yama-kei.org/local_train_nakameguro/P5182807.html','popup','width=640,height=480,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://www.yama-kei.org/local_train_nakameguro/P5182807-thumb.jpg" width="320" height="240" alt="" /></a></p>
+
+<p>705は2年近く使ってきて、雨の中走ってると斜度計が狂う(0-2%しか出なくなる)という、いかにも浸水間近な症状が出ていたので、今回の問題が出なくても近いうちに壊れてた可能性が高そう。ログを残すことさえ考えなければ全く問題なく使えるので、今後ともサイクリングや山登りではお世話になることもあるかな。</p>
+
+<p>で、Edge 500。<br />
+Garminのチーム員からのリクエスト(「705なぞ使ってられるか！」)で開発されただけあって、「GPSつきサイコン」としてよくできているなーという印象。</p>
+
+<p>今更細かいレビューを書くのは面倒なので、要点をまとめると・・・</p>
+
+<p>- デザインは×</p>
+
+<p>silver/blueのピカピカ外装はいけてない。<br />
+Tour of Californiaのご当地限定で出ているGrey/Whiteカラーのやつが欲しかったのだけど、入手性が分からなかったので諦めた。</p>
+
+<p>- 操作性は△</p>
+
+<p>ボタンが小さくて押しにくい上にGUIのレスポンスが705より少し落ちる印象なので、操作性はいまひとつ。慣れの問題はあるにせよ、705のジョイスティックはとても使いやすいことを再認識。</p>
+
+<p>- 機能性は○</p>
+
+<p>地図表示できないことを除けばついてる機能は705と同等。自動電源OFF、気温計、スタート通知機能(未スタート状態で走り出すと、「スタートしてないよ」とリマインドしてくれる)などなど、705になかった機能もあって、GPSつきサイコンとしての使い勝手は上がっている印象。初期バージョンではなかったWorkout機能は新しいファームウェアからサポートされたみたい。</p>
+
+<p>- サイズ、重量、視認性、装着方法も○</p>
+
+<p>なんといっても軽いしコンパクトなのはナイス。705に慣れてたので500をつけたら小さく感じたけど、冷静になって考えると500でも一般のサイコンに比べると大きいわけですが・・・。<br />
+液晶のサイズは705より一回り小さいので視認性はちょっと落ちるけど、ギリギリ必要十分。バックライトもあるので暗くても安心。<br />
+ラバーバンドを使った装着方法はスマートで気に入った。705はステム変えるたびにタイラップ切らなきゃいけなかったのがいけてない。ただし、500のホルダーの固定力は少し弱い印象で、ボタンを強めに押そうとして外しそうになってしまったことがあった。</p>
+
+<p><a href="http://www.yama-kei.org/local_train_nakameguro/P5197000.html" onclick="window.open('http://www.yama-kei.org/local_train_nakameguro/P5197000.html','popup','width=640,height=480,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://www.yama-kei.org/local_train_nakameguro/P5197000-thumb.jpg" width="320" height="240" alt="" /></a></p>
+
+<p>＊＊</p>
+
+<p>全体的に見て、705が「機能てんこもりの自転車用GPS」だったのに対して500は「機能てんこもりのGPSつきサイコン」かなーという印象。ソフトウェアの安定性はまだ分からないけど、トレーニングやレースの友として705の代わりは十分に役立ってくれそう。</p>
+
+<p><a href="http://www.yama-kei.org/local_train_nakameguro/P5196970.html" onclick="window.open('http://www.yama-kei.org/local_train_nakameguro/P5196970.html','popup','width=640,height=480,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://www.yama-kei.org/local_train_nakameguro/P5196970-thumb.jpg" width="320" height="240" alt="" /></a></p>
+
+<p>ただし、(例えば)SRMのコンピューターが「トレーニング・レースのためのツール」として質実剛健な作りをしているのに対して、Garmin製品はバギー(特に初期バージョン)でもよいから機能製重視という傾向があることはきっちり理解しておかないと駄目かなーと思った。</p>
+                              </div>
+                              
+                              
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  投稿者: <a href="http://www.yama-kei.org">yama-kei</a> 日時: 2010&#24180;05&#26376;19&#26085; 21:33
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="http://www.yama-kei.org/local_train_nakameguro/2010/05/garmin_edge_500.html">パーマリンク</a>
+                           | <a href="http://www.yama-kei.org/local_train_nakameguro/2010/05/garmin_edge_500.html#comments">コメント (4)</a>
+                           | <a href="http://www.yama-kei.org/local_train_nakameguro/2010/05/garmin_edge_500.html#trackback">トラックバック (0)</a>
+                        </p>
+                     </div>
+                                          <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://www.yama-kei.org/local_train_nakameguro/cat92/index.html#007063"
+    trackback:ping="http://www.yama-kei.org/mt/mt-tb.cgi/7063"
+    dc:title="Garmin Edge 500 あれこれ"
+    dc:identifier="http://www.yama-kei.org/local_train_nakameguro/cat92/index.html#007063"
+    dc:subject="サイクルコンピューター"
+    dc:description="使い始めてしばらく経ったので、気づいたことをいくつかメモ。 (ヒルクライム、はじ..."
+    dc:creator="yama-kei"
+    dc:date="2010-06-14T08:47:18+09:00" />
+</rdf:RDF>
+-->
+
+
+                     <h2 class="date-header">2010&#24180;06&#26376;14&#26085;</h2>
+                     <a id="a007063"></a>
+                     <div class="entry" id="entry-7063">
+                        <h3 class="entry-header">Garmin Edge 500 あれこれ</h3>
+                        <div class="entry-content">
+                                                            <div class="entry-body">
+                                 <p>使い始めてしばらく経ったので、気づいたことをいくつかメモ。</p>
+
+<p><a href="http://www.yama-kei.org/local_train_nakameguro/P6122984.html" onclick="window.open('http://www.yama-kei.org/local_train_nakameguro/P6122984.html','popup','width=640,height=480,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://www.yama-kei.org/local_train_nakameguro/P6122984-thumb.jpg" width="320" height="240" alt="" /></a><br />
+(ヒルクライム、はじまるよー)</p>
+
+<p>- Edge 500でもコース/ワークアウトが(いちおう)使える</p>
+
+<p>もちろん地図表示はないけど、あらかじめTraining Centerから転送しておけばWorkout->Courseからコース機能が利用可能で、設定したコースがラインで表示される。プロフィールマップもある。ワークアウト機能も同じように使えるらしい。</p>
+
+<p>それぞれEdge 500のフラッシュ上ではFITファイルとして保存されているようなので、今のところTraining Centerからしか転送できないのがちとめんどい。ルートラボが直接吐いてくれるTCXはTraining Centerが読んでくれないので、自前で変換する必要あり。</p>
+
+<p><a href="http://www.yama-kei.org/local_train_nakameguro/P6122981.html" onclick="window.open('http://www.yama-kei.org/local_train_nakameguro/P6122981.html','popup','width=640,height=480,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://www.yama-kei.org/local_train_nakameguro/P6122981-thumb.jpg" width="320" height="240" alt="" /></a></p>
+
+<p>ただし、コース機能はルートの表示中の更新が猛烈に遅く、縮尺も自分では選べず(自動的に切り替わる)、コースのライン表示が見えないことがあったりするので、過度な期待は禁物。コースから外れたら教えてくれるので、最悪それを頼りに行けば迷わずに済むかな、というレベル。恐らくこれはEdge 500のプロセッサがEdge 705のものに比べて格段にショボいのが原因。もう少し短いコースだとマシなのかも(自分が試したのは130km)。最初から最後までクラッシュせずに動作したことはほめてあげてもよいかも。</p>
+
+<p>ワークアウト機能は未テストだけど、プロセッサリソースをそんなに食うとも思えないので、普通に使えるんじゃないかと予想。</p>
+
+<p>- Cadence/Power で異なるアベレージの計算方法が選べる</p>
+
+<p>アベレージ計算にゼロを含めるか否かの設定(Zero Averaging)。Edge 705だとCadence/Powerまとめての設定になっちゃうのに対して、Edge 500はそれぞれ別に設定できる。ケイデンスはゼロを含めず、パワーはゼロを含めるのが一般的なので、それに合わせればトレーニング管理ソフトにぶち込んだ時に全然違う数値が出たりすることが減るはず。</p>
+
+<p>- ボタン入力へのレスポンスはあんまりよくない</p>
+
+<p>全体的に動作がもっさり。<br />
+Edge 705もジョイスティックは直感的に操作できるが素晴らしかったけど、Edge 500はボタン数も少ないし配置もアレなので使っていてストレスが溜まる。</p>
+
+<p>あと、Edge 705だと通常画面の上にダイアログ(「サテライト見つかんないよ」とか「ホイールサイズ計算できたよ」とか)が表示されててもボタン入力が効いて通常画面に対する操作ができたのに対して、Edge 500だとまずOKボタンを押してダイアログから抜けないと操作できないので少々ストレスフル。</p>
+
+<p>- ソフトの安定度はそれなり</p>
+
+<p>1ヶ月くらい使ってハングは一回だけ。<br />
+インターバルの練習の途中にStart/StopとLapボタンをちょこまか操作していたら突然ボタン入力に反応しなくなってしまい、画面表示が固まってしまった。「ボタン全部押し」のリセット方法をその場で編み出して(?)回避。ログは部分的に消失したけどきちんとダウンロードできた。</p>
+
+<p>- 全体的に見て</p>
+
+<p>よくできてると思う。<br />
+これだけ機能がついててあの値段(海外価格)は素晴らしい。</p>
+
+<p>＊＊</p>
+
+<p>そういえば、Mt.富士ヒルクライムにGarminのブースがあって日本語版も展示されていたのを見て、それぞれの目標タイム用のバーチャルパートナーを配布したらウケるだろうになーと思った。1:30狙い、1:20狙い、1:10狙い、1:05狙い・・・とかそんな感じでファイルを配って、使い方をレクチャーすれば「おおー、すげー」と思う人は多いはず。</p>
+
+<p>一定スピードだとよいペースメーカーにはなれないので、できれば強い人が一定出力で走ったログか、Oyamaさんの<a href="http://oyama.vox.com/library/post/%E8%84%B3%E5%86%85%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%B0-rev1.html">脳内サイクリング</a>みたいなデータが理想的、かな。</p>
+                              </div>
+                              
+                              
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  投稿者: <a href="http://www.yama-kei.org">yama-kei</a> 日時: 2010&#24180;06&#26376;14&#26085; 08:47
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="http://www.yama-kei.org/local_train_nakameguro/2010/06/garmin_edge_500_1.html">パーマリンク</a>
+                           | <a href="http://www.yama-kei.org/local_train_nakameguro/2010/06/garmin_edge_500_1.html#comments">コメント (7)</a>
+                           | <a href="http://www.yama-kei.org/local_train_nakameguro/2010/06/garmin_edge_500_1.html#trackback">トラックバック (0)</a>
+                        </p>
+                     </div>
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                   <div id="beta-inner" class="pkg">
+                       <div class="module-search module">
+                          <h2 class="module-header">検索</h2>
+                          <div class="module-content">
+                             <form method="get" action="http://www.yama-kei.org/mt/mt-search.cgi">
+                                <input type="hidden" name="IncludeBlogs" value="12" />
+                                <label for="search" accesskey="4">ブログを検索: </label><br />
+                                <input id="search" name="search" size="20" />
+                                <input type="submit" value="検索" />
+                             </form>
+                          </div>
+                       </div>
+
+                       <div class="module-welcome module">
+                          <h2 class="module-header">About サイクルコンピューター</h2>
+                          <div class="module-content">
+                              <p class="first">ブログ「鈍行・中目黒の自転車メモ」のカテゴリ「サイクルコンピューター」に投稿されたすべてのエントリーのアーカイブのページです。過去のものから新しいものへ順番に並んでいます。</p> 
+                                                                <p>前のカテゴリは<a href="http://www.yama-kei.org/local_train_nakameguro/cat85/">その他</a>です。</p>
+                              
+                                                                <p>次のカテゴリは<a href="http://www.yama-kei.org/local_train_nakameguro/cat80/">トレーニング</a>です。</p>
+                              
+                              <p>他にも多くのエントリーがあります。<a href="http://www.yama-kei.org/local_train_nakameguro/">メインページ</a>や<a href="http://www.yama-kei.org/local_train_nakameguro/archives.html">アーカイブページ</a>も見てください。</p>
+
+                          </div>
+                       </div>
+
+                       <div class="module-syndicate module">
+                          <div class="module-content">
+                             <a href="http://www.yama-kei.org/local_train_nakameguro/atom.xml">このブログのフィードを取得</a><br />
+                             [<a href="http://www.sixapart.jp/about/feeds">フィードとは</a>]
+                          </div>
+                       </div>
+
+                       
+
+                       <div class="module-powered module">
+                          <div class="module-content">
+                             Powered by<br /><a href="http://www.sixapart.jp/movabletype/">Movable Type 3.36</a>
+                          </div>
+                       </div>
+                       
+                       <div class="module-content">
+おすすめ自転車関連本
+<SCRIPT charset="utf-8" type="text/javascript" src="http://ws.amazon.co.jp/widgets/q?ServiceVersion=20070822&MarketPlace=JP&ID=V20070822/JP/pastelcoloure-22/8001/2a48a3a9-c2dc-4b41-902c-9afcbf702492"> </SCRIPT> <NOSCRIPT><A HREF="http://ws.amazon.co.jp/widgets/q?ServiceVersion=20070822&MarketPlace=JP&ID=V20070822%2FJP%2Fpastelcoloure-22%2F8001%2F2a48a3a9-c2dc-4b41-902c-9afcbf702492&Operation=NoScript">Amazon.co.jp ウィジェット</A></NOSCRIPT>
+</div><script type="text/javascript"><!--
+google_ad_client = "pub-7948296006321133";
+/* 160x600, 作成済み 09/06/03 */
+google_ad_slot = "9835747242";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+                   </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9164977-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>

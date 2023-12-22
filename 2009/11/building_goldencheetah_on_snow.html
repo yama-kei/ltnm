@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta name="generator" content="Movable Type 3.36" />
+
+   <link rel="stylesheet" href="http://www.yama-kei.org/local_train_nakameguro/styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="http://www.yama-kei.org/local_train_nakameguro/atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.yama-kei.org/local_train_nakameguro/index.xml" />
+
+   <title>Macのトレーニングログ管理ソフト (鈍行・中目黒の自転車メモ)</title>
+
+   <link rel="start" href="http://www.yama-kei.org/local_train_nakameguro/" title="Home" />
+   <link rel="prev" href="http://www.yama-kei.org/local_train_nakameguro/2009/11/1_1.html" title="トレーニングについて考える(1)：エネルギーソース" />
+   <link rel="next" href="http://www.yama-kei.org/local_train_nakameguro/2009/11/power_profile_test_1.html" title="Power Profile Test 二回目" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://www.yama-kei.org/local_train_nakameguro/2009/11/building_goldencheetah_on_snow.html"
+    trackback:ping="http://www.yama-kei.org/mt/mt-tb.cgi/6947"
+    dc:title="Macのトレーニングログ管理ソフト"
+    dc:identifier="http://www.yama-kei.org/local_train_nakameguro/2009/11/building_goldencheetah_on_snow.html"
+    dc:subject="日々のつぶやき"
+    dc:description="5年以上前からの宿題だった自宅へのMac導入を果たしたので、Macで使えるトレー..."
+    dc:creator="yama-kei"
+    dc:date="2009-11-28T19:42:03+09:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="http://www.yama-kei.org/local_train_nakameguro/mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="http://www.yama-kei.org/local_train_nakameguro/" accesskey="1">鈍行・中目黒の自転車メモ</a></h1>
+               <h2 id="banner-description"></h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="http://www.yama-kei.org/local_train_nakameguro/2009/11/1_1.html">&laquo; トレーニングについて考える(1)：エネルギーソース</a> |
+                        <a href="http://www.yama-kei.org/local_train_nakameguro/">メイン</a>
+                        | <a href="http://www.yama-kei.org/local_train_nakameguro/2009/11/power_profile_test_1.html">Power Profile Test 二回目 &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">Macのトレーニングログ管理ソフト</h2>
+                     <div class="entry" id="entry-6947">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>5年以上前からの宿題だった自宅への<a href="http://coffeemilk.cocolog-nifty.com/log/2009/11/post-2ad5.html">Mac導入</a>を果たしたので、Macで使えるトレーニングログを管理するソフトを物色中。</p>
+
+<p>評価版のVMWare Fusion 3に、ライセンスの余ってたWindows XPを入れたので、バーチャルなWindows環境は既に構築済み。・・・なのだけど、Training Peaks WKO+のライセンスは特定の一台のコンピューターでのみ有効で、ライセンスの移行は「ハードディスクがクラッシュした時のみ」許されているので、Macで使うにはライセンスの追加購入が必要。</p>
+
+<p>VMWare FusionはWKO+以外でも使う予定なのでライセンス購入は惜しくないけど、WKO+のライセンスを追加購入はなんだかな〜という感じ。</p>
+
+<p>＊＊</p>
+
+<p>・・・で、ここ最近になって開発の勢いを増している <a href="http://goldencheetah.org/">GoldenCheetah</a>(以下"GC") を試してみたところ、これがなかなかよさげ。</p>
+
+<p>トレーニングログの管理に特化した作りなので、GPSログによる地図表示とかそういうファンシーな機能はついてないし、まだまだ荒削りなところも多いけど、開発メンバーもユーザーコミュニティーも元気で、今後の発展がなかなか期待できそう。</p>
+
+<p>しばらくはこれメインで使ってみようかな。</p>
+
+<p>＊＊</p>
+
+<p>GCで開発中の面白機能として、Garmin の USB Ant Stickを用意することで、quarqdなるデーモン経由でリアルタイムストリーミングで走行データの取得＆表示ってのがある。いかにもgeekサイクリストが考えつきそうなことだけど、これってうまくすれば「ネットワーク越しでのサイクリング大会」とか、果てしなく面白い方向に繋がる可能性があるので、個人的には興味ありあ〜り。</p>
+
+<p>問題は、この手の experimental な機能は公式リリースバージョンには含まれないので、最新版を自前でビルドしないと試せない・・・。ので、Macでの開発環境を構築ついでに GC をビルドしてみたところ、軽くハマりそうになりながらもビルド成功。<br />
+参考になるか分からないけど、メモを<a href="http://www.yama-kei.org/local_train_nakameguro/20091128_build_gc.rtf">ここ</a>に置いておいたので、興味のある人はどうぞ。</p>
+
+<p><a href="http://www.yama-kei.org/local_train_nakameguro/self_built_gc.html" onclick="window.open('http://www.yama-kei.org/local_train_nakameguro/self_built_gc.html','popup','width=1130,height=778,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://www.yama-kei.org/local_train_nakameguro/self_built_gc-thumb.png" width="320" height="220" alt="" /></a></p>
+
+<p>これで、手元で最新の GC を追いかける環境が整った。</p>
+
+<p>早速発注した USB Ant Stick が近日中に届く予定なので、これで色々と遊べるようになる予定・・・って、冷静に考えるとローラー台置いてる部屋にあるのは普通の Windows ノートPCなんだよな〜。iMacが置いてある自室にローラー台を持ち込む気は今更ないし・・・。WindowsノートにVMWare 入れて Linux 環境で GC 走らせるってのもアホっぽいし。</p>
+
+<p>はて、どうしたもんでしょうかね。</p>
+                           </div>
+                           
+                                        
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  投稿者: <a href="http://www.yama-kei.org">yama-kei</a> 日時: 2009&#24180;11&#26376;28&#26085; 19:42
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="http://www.yama-kei.org/local_train_nakameguro/2009/11/building_goldencheetah_on_snow.html">パーマリンク</a>
+                        </p>
+                     </div>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-7948296006321133";
+/* 728x15, 作成済み 09/09/04 */
+google_ad_slot = "2400213415";
+google_ad_width = 728;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br>
+
+                                          <div class="trackbacks">
+                        <h3 id="trackback" class="trackbacks-header">トラックバック</h3>
+                        <div id="trackbacks-info">
+                           <p>このエントリーのトラックバックURL: <br />http://www.yama-kei.org/mt/mt-tb.cgi/6947</p>
+                        </div>
+                        
+                     </div>
+                     
+
+                                          <div id="comments" class="comments">
+                                                                                 <div class="comments-content">
+                                 <h3 class="comments-header">コメント (2)</h3>
+                           
+                                 <a id="c000232"></a>
+                                 <div class="comment" id="comment-232">
+                                    <div class="comment-inner">
+                                       <div class="comment-header">
+                                          <a href="http://mitsukuni.org" rel="nofollow">key</a>:
+                                       </div>
+                                       <div class="comment-content">
+                                          <p>ビルドメモ見ました〜</p>
+
+<p>以下、おそらくですが、<br />
+qt4-macは4.5.0 or laterなのでqt4-mac-develは不要、<br />
+qwtはパッチ版がGoldenCheetahに含まれているのでこちらも不要です。</p>
+
+<p><a href="http://groups.google.com/group/golden-cheetah-users/browse_thread/thread/a7c307e6a8edc8ca" rel="nofollow">http://groups.google.com/group/golden-cheetah-users/browse_thread/thread/a7c307e6a8edc8ca</a></p>
+
+<p>GoldenCheetahのソースコードにはクライアント・サーバのコードが部分的に<br />
+含まれており、将来的にインターネット越しにバーチャルレースをするような計画があるようです。<br />
+</p>
+                                       </div>
+                                       <p class="comment-footer">
+                                          投稿者:
+                                          <a href="http://mitsukuni.org" rel="nofollow">key</a>  |
+                                          <a href="#comment-232">2009&#24180;11&#26376;29&#26085; 12:36</a>
+                                       </p>
+                                       <p class="comment-footer-experimental">
+                                          日時:
+                                          <a href="#comment-232" title="このコメントへのパーマリンク">2009&#24180;11&#26376;29&#26085; 12:36</a>
+                                       </p>
+                                    </div>
+                                 </div>
+                           
+                                                   
+                                 <a id="c000233"></a>
+                                 <div class="comment" id="comment-233">
+                                    <div class="comment-inner">
+                                       <div class="comment-header">
+                                          yama-kei:
+                                       </div>
+                                       <div class="comment-content">
+                                          <p>> keyさん</p>
+
+<p>お〜、情報感謝です。<br />
+Macは遊べる環境としてすっかり気に入ってしまいました。</p>
+
+<p>バーチャルレースは熱いですねぇ。<br />
+パワーメーターが必須になりそうなので、大分ニッチな層にしか浸透しなさそうですが・・・。</p>
+                                       </div>
+                                       <p class="comment-footer">
+                                          投稿者:
+                                          yama-kei  |
+                                          <a href="#comment-233">2009&#24180;11&#26376;30&#26085; 08:40</a>
+                                       </p>
+                                       <p class="comment-footer-experimental">
+                                          日時:
+                                          <a href="#comment-233" title="このコメントへのパーマリンク">2009&#24180;11&#26376;30&#26085; 08:40</a>
+                                       </p>
+                                    </div>
+                                 </div>
+                                                         </div>
+                           
+                        
+
+                         
+                        <form method="post" action="http://www.yama-kei.org/mt/mt-comments.cgi" name="comments_form" onsubmit="if (this.bakecookie.checked) rememberMe(this)">
+                           <input type="hidden" name="static" value="1" />
+                           <input type="hidden" name="entry_id" value="6947" />
+                           
+                           <div class="comments-open" id="comments-open">
+                              <h2 class="comments-open-header">コメントを投稿</h2>
+                              
+                              <div class="comments-open-content">
+                                 <script type="text/javascript">
+                                 <!--
+                                 writeTypeKeyGreeting(commenter_name, 6947);
+                                 //-->
+                                 </script>
+                              
+                                 
+
+                                 <div id="comments-open-data">
+                                    <div id="name-email">
+                                       <p>
+                                          <label for="comment-author">名前:</label>
+                                          <input id="comment-author" name="author" size="30" />
+                                       </p>
+                                       <p>
+                                          <label for="comment-email">メールアドレス:</label>
+                                          <input id="comment-email" name="email" size="30" />
+                                       </p>
+                                    </div>
+
+                                    <p>
+                                       <label for="comment-url">URL:</label>
+                                       <input id="comment-url" name="url" size="30" />
+                                    </p>
+                                    <p>
+                                       <label for="comment-bake-cookie"><input type="checkbox"
+                                          id="comment-bake-cookie" name="bakecookie" onclick="if (!this.checked) forgetMe(document.comments_form)" value="1" />
+                                          この情報を登録しますか?</label>
+                                    </p>
+                                 </div>
+
+                                 <p id="comments-open-text">
+                                    <label for="comment-text">コメント: </label>
+                                    <textarea id="comment-text" name="text" rows="15" cols="50"></textarea>
+                                 </p>
+                                 <div id="comments-open-footer" class="comments-open-footer">
+                                    <input type="submit" accesskey="v" name="preview" id="comment-preview" value="確認" />
+                                    <input type="submit" accesskey="s" name="post" id="comment-post" value="投稿" />
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                        
+                     </div>
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">検索</h2>
+                         <div class="module-content">
+                            <form method="get" action="http://www.yama-kei.org/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="12" />
+                               <label for="search" accesskey="4">ブログを検索: </label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="検索" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">2009&#24180;11&#26376;28&#26085; 19:42に投稿されたエントリーのページです。</p>
+                             <p>ひとつ前の投稿は「<a href="http://www.yama-kei.org/local_train_nakameguro/2009/11/1_1.html">トレーニングについて考える(1)：エネルギーソース</a>」です。</p>
+
+                             <p>次の投稿は「<a href="http://www.yama-kei.org/local_train_nakameguro/2009/11/power_profile_test_1.html">Power Profile Test 二回目</a>」です。</p>
+
+                             <p>他にも多くのエントリーがあります。<a href="http://www.yama-kei.org/local_train_nakameguro/">メインページ</a>や<a href="http://www.yama-kei.org/local_train_nakameguro/archives.html">アーカイブページ</a>も見てください。</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="http://www.yama-kei.org/local_train_nakameguro/atom.xml">このブログのフィードを取得</a><br />
+                            [<a href="http://www.sixapart.jp/about/feeds">フィードとは</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.jp/movabletype/">Movable Type 3.36</a>
+                         </div>
+                      </div>
+
+                      <div class="module-content">
+おすすめ自転車関連本
+<SCRIPT charset="utf-8" type="text/javascript" src="http://ws.amazon.co.jp/widgets/q?ServiceVersion=20070822&MarketPlace=JP&ID=V20070822/JP/pastelcoloure-22/8001/2a48a3a9-c2dc-4b41-902c-9afcbf702492"> </SCRIPT> <NOSCRIPT><A HREF="http://ws.amazon.co.jp/widgets/q?ServiceVersion=20070822&MarketPlace=JP&ID=V20070822%2FJP%2Fpastelcoloure-22%2F8001%2F2a48a3a9-c2dc-4b41-902c-9afcbf702492&Operation=NoScript">Amazon.co.jp ウィジェット</A></NOSCRIPT>
+</div><script type="text/javascript"><!--
+google_ad_client = "pub-7948296006321133";
+/* 160x600, 作成済み 09/06/03 */
+google_ad_slot = "9835747242";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9164977-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>

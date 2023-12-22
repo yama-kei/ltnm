@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<rsd version="1.0" xmlns="http://archipelago.phrasewise.com/rsd">
+<service>
+<engineName>Movable Type 3.36</engineName> 
+<engineLink>http://www.sixapart.com/movabletype/</engineLink>
+<homePageLink>http://www.yama-kei.org/local_train_nakameguro/</homePageLink>
+<apis>
+<api name="MetaWeblog" preferred="true" apiLink="http://www.yama-kei.org/mt/mt-xmlrpc.cgi" blogID="12" />
+<api name="MovableType" preferred="false" apiLink="http://www.yama-kei.org/mt/mt-xmlrpc.cgi" blogID="12" />
+<api name="Blogger" preferred="false" apiLink="http://www.yama-kei.org/mt/mt-xmlrpc.cgi" blogID="12" />
+<api name="Atom" preferred="false" apiLink="http://www.yama-kei.org/mt/mt-atom.cgi/weblog" blogID="12" />
+</apis>
+</service>
+</rsd>

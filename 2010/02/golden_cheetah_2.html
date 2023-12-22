@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta name="generator" content="Movable Type 3.36" />
+
+   <link rel="stylesheet" href="http://www.yama-kei.org/local_train_nakameguro/styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="http://www.yama-kei.org/local_train_nakameguro/atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.yama-kei.org/local_train_nakameguro/index.xml" />
+
+   <title>Golden Cheetahの新機能 (鈍行・中目黒の自転車メモ)</title>
+
+   <link rel="start" href="http://www.yama-kei.org/local_train_nakameguro/" title="Home" />
+   <link rel="prev" href="http://www.yama-kei.org/local_train_nakameguro/2010/02/post_110.html" title="ウィンターロード・あれこれ" />
+   <link rel="next" href="http://www.yama-kei.org/local_train_nakameguro/2010/02/bicycling_science_david_gordon_1.html" title="Bicycling Science / David Gordon Wilson" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://www.yama-kei.org/local_train_nakameguro/2010/02/golden_cheetah_2.html"
+    trackback:ping="http://www.yama-kei.org/mt/mt-tb.cgi/6990"
+    dc:title="Golden Cheetahの新機能"
+    dc:identifier="http://www.yama-kei.org/local_train_nakameguro/2010/02/golden_cheetah_2.html"
+    dc:subject="トレーニングに関するあれこれ"
+    dc:description="イケイケドンドンなノリで開発が進んでいるGolden Cheetah。 近日中に..."
+    dc:creator="yama-kei"
+    dc:date="2010-02-03T21:12:00+09:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="http://www.yama-kei.org/local_train_nakameguro/mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="http://www.yama-kei.org/local_train_nakameguro/" accesskey="1">鈍行・中目黒の自転車メモ</a></h1>
+               <h2 id="banner-description"></h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="http://www.yama-kei.org/local_train_nakameguro/2010/02/post_110.html">&laquo; ウィンターロード・あれこれ</a> |
+                        <a href="http://www.yama-kei.org/local_train_nakameguro/">メイン</a>
+                        | <a href="http://www.yama-kei.org/local_train_nakameguro/2010/02/bicycling_science_david_gordon_1.html">Bicycling Science / David Gordon Wilson &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">Golden Cheetahの新機能</h2>
+                     <div class="entry" id="entry-6990">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>イケイケドンドンなノリで開発が進んでいる<a href="http://goldencheetah.org/">Golden Cheetah</a>。<br />
+近日中に1.3がリリースされる予定で、すでに1.4向けの話がちょこちょこ。</p>
+
+<p>中でも目玉機能として注目されているのが"<a href="http://nyvelocity.com/content/coachingfitness/2010/aerolab-work-progress">Aerolab</a>"。</p>
+
+<p>これは「パワーメーターの出力値を使って自転車が走るのを邪魔する抵抗を計算してしまいましょう」という試み。うまくいけばソフトウェアで風洞テストが実現できてしまうポテンシャルを秘めていて、現在鋭意開発中とのこと。</p>
+
+<p>＊＊</p>
+
+<p>自転車が前に進むのを邪魔する大きな抵抗は空気と重力の二つ。<br />
+重力による抵抗は身体と財布のダイエットで頑張るものとして、空気抵抗はポジションの変化によって低減させることが可能。空気抵抗はCdA(=Cd(coefficient of Drag(大気抵抗係数))xA(frontal Area(前面投影面積)))に大きく依存するので、前面投影面積をできる限り少なく抑えるのが王道的アプローチ。</p>
+
+<p>それ以外の小さな抵抗としてはタイヤの転がり抵抗とドライブトレイン内でのパワーロスがあり、転がり抵抗はタイヤの種類・空気圧と路面状態に依存し(Crr(路面抵抗係数)として表現される)、ドライブトレイン内でのパワーロスはコンポーネントの性能＆状態に依存する。</p>
+
+<p>Aerolabの動作としては、出力値、速度、重量等の情報をもとに計算された仮想的な高度変化をCrrとCdA(空気抵抗係数(=前面投影面積x大気抵抗係数))等のパラメータを調整していくことで実際の高度変化に合致させ、CrrとCdAを割り出す仕組み。</p>
+
+<p>逆に言うと、解析対象とする走行では同じ路面状況＆同じポジションをキープする必要があるので、実際にCrrとCdAを求めるために使うときはコンディションを整えて走ったデータを準備する必要がある。風の影響で計算が狂ったりしないのかが謎ですが、そのあたりはきちんと考えられているのでしょう。近いうちにドライブトレイン内でのパワーロスも変更可能なパラメータとして導入される予定とのこと。</p>
+
+<p>＊＊</p>
+
+<p>CrrやCdAは、すでにエクセルシートを使ったり数式を解いたりすることで計算する方法が提案されているみたいだけど、一般のサイクリストがシステマチックにこれらの数値を取り出せる・・・という意味で画期的な試みであるといえそうです。</p>
+
+<p>お試し版のWindowsビルドはすでに<a href="http://andyfroncioni.com/2010/01/you-can-test-drive-goldencheetahaerolab-on-windows-right-now/">ここ</a>からダウンロード可能。</p>
+
+<p>＊＊</p>
+
+<p><a href="http://www.yama-kei.org/local_train_nakameguro/gc_3dplot.html" onclick="window.open('http://www.yama-kei.org/local_train_nakameguro/gc_3dplot.html','popup','width=784,height=586,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://www.yama-kei.org/local_train_nakameguro/gc_3dplot-thumb.png" width="320" height="239" alt="" /></a></p>
+
+<p>あと、個人的に気に入っているのが走行データの3D表示機能。<br />
+パッと見てどういうトレーニングしたのが直観的に分かるの素晴らしい。<br />
+これは1.3に入るはず。</p>
+
+<p>＊＊</p>
+
+<p><a href="http://www.yama-kei.org/local_train_nakameguro/gc_training_menu_gen.png"><img alt="gc_training_menu_gen.png" src="http://www.yama-kei.org/local_train_nakameguro/gc_training_menu_gen-thumb.png" width="320" height="170" /></a></p>
+
+<p>あとは・・・QTの勉強がてらEdge 705のAdvaned Workoutを作成・エディットできる機能を手元で作成中。TCXを吐きだす部分がまだだけど、ある程度動くようになったらパッチを送りつけてみようかな。</p>
+
+<p>実を言うとトレーニングメニュー作成ツールをGoldenCheetahに載せる必要性はそこまでないんだけど、Critical Power(FTP)などの数値を参照しながらトレーニングメニューを作成できたら便利かなーと考えた。</p>
+
+<p>こうなってくると、限定的な表現しかできないEdge 705のトレーニングメニューに縛られることなしに、汎用的なトレーニングメニュービューワー兼エディター(?)にしてしまったほうがよいのかも？</p>
+
+<p>まー、暇な時にでもちょこちょこ書き足していこう。</p>
+                           </div>
+                           
+                                        
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  投稿者: <a href="http://www.yama-kei.org">yama-kei</a> 日時: 2010&#24180;02&#26376;03&#26085; 21:12
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="http://www.yama-kei.org/local_train_nakameguro/2010/02/golden_cheetah_2.html">パーマリンク</a>
+                        </p>
+                     </div>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-7948296006321133";
+/* 728x15, 作成済み 09/09/04 */
+google_ad_slot = "2400213415";
+google_ad_width = 728;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br>
+
+                                          <div class="trackbacks">
+                        <h3 id="trackback" class="trackbacks-header">トラックバック</h3>
+                        <div id="trackbacks-info">
+                           <p>このエントリーのトラックバックURL: <br />http://www.yama-kei.org/mt/mt-tb.cgi/6990</p>
+                        </div>
+                        
+                     </div>
+                     
+
+                                          <div id="comments" class="comments">
+                                                                                 <div class="comments-content">
+                                 <h3 class="comments-header">コメント (3)</h3>
+                           
+                                 <a id="c000359"></a>
+                                 <div class="comment" id="comment-359">
+                                    <div class="comment-inner">
+                                       <div class="comment-header">
+                                          <a href="http://mitsukuni.org" rel="nofollow">key</a>:
+                                       </div>
+                                       <div class="comment-content">
+                                          <p>advanced workout editor, 同じものを作ろうとしていました。やることが被りますねw</p>
+
+<p>C++はダルイのでPythonで…と思っていたのですが、<br />
+wxpythonのコンパイルが通らず放置プレイといった状態。</p>
+
+<p>頑張ってください〜</p>
+                                       </div>
+                                       <p class="comment-footer">
+                                          投稿者:
+                                          <a href="http://mitsukuni.org" rel="nofollow">key</a>  |
+                                          <a href="#comment-359">2010&#24180;02&#26376;03&#26085; 23:05</a>
+                                       </p>
+                                       <p class="comment-footer-experimental">
+                                          日時:
+                                          <a href="#comment-359" title="このコメントへのパーマリンク">2010&#24180;02&#26376;03&#26085; 23:05</a>
+                                       </p>
+                                    </div>
+                                 </div>
+                           
+                                                   
+                                 <a id="c000360"></a>
+                                 <div class="comment" id="comment-360">
+                                    <div class="comment-inner">
+                                       <div class="comment-header">
+                                          <a href="http://dajakart.exblog.jp/" rel="nofollow">ダジャラー</a>:
+                                       </div>
+                                       <div class="comment-content">
+                                          <p>お、Golden Cheetahですか。<br />
+こんなのがあったんですね、知らなかった。<br />
+TCXも読み込めるんですね。<br />
+早速使ってみます。<br />
+パワーデータないのが残念ですが(^_^;)</p>
+                                       </div>
+                                       <p class="comment-footer">
+                                          投稿者:
+                                          <a href="http://dajakart.exblog.jp/" rel="nofollow">ダジャラー</a>  |
+                                          <a href="#comment-360">2010&#24180;02&#26376;04&#26085; 00:39</a>
+                                       </p>
+                                       <p class="comment-footer-experimental">
+                                          日時:
+                                          <a href="#comment-360" title="このコメントへのパーマリンク">2010&#24180;02&#26376;04&#26085; 00:39</a>
+                                       </p>
+                                    </div>
+                                 </div>
+                           
+                                                   
+                                 <a id="c000361"></a>
+                                 <div class="comment" id="comment-361">
+                                    <div class="comment-inner">
+                                       <div class="comment-header">
+                                          yama-kei:
+                                       </div>
+                                       <div class="comment-content">
+                                          <p>> keyさん<br />
+あらま。<br />
+自分も前にGoogle Appあたりでトレーニングメニューを管理する仕組みを作ろうかなーと目論んでいたのですが、構想ばかりが大きくなってサスペンド中なのでした・・・。<br />
+C++はちょっと大げさですが、Qtは使いやすいので気に入りました。</p>
+
+<p>> ダジャラーさん<br />
+Edge 500のFITにはまだ対応していないようですが、既に対応を入れる話が出ていたので、多分近日中に対応するはず。</p>
+                                       </div>
+                                       <p class="comment-footer">
+                                          投稿者:
+                                          yama-kei  |
+                                          <a href="#comment-361">2010&#24180;02&#26376;04&#26085; 09:21</a>
+                                       </p>
+                                       <p class="comment-footer-experimental">
+                                          日時:
+                                          <a href="#comment-361" title="このコメントへのパーマリンク">2010&#24180;02&#26376;04&#26085; 09:21</a>
+                                       </p>
+                                    </div>
+                                 </div>
+                                                         </div>
+                           
+                        
+
+                         
+                        <form method="post" action="http://www.yama-kei.org/mt/mt-comments.cgi" name="comments_form" onsubmit="if (this.bakecookie.checked) rememberMe(this)">
+                           <input type="hidden" name="static" value="1" />
+                           <input type="hidden" name="entry_id" value="6990" />
+                           
+                           <div class="comments-open" id="comments-open">
+                              <h2 class="comments-open-header">コメントを投稿</h2>
+                              
+                              <div class="comments-open-content">
+                                 <script type="text/javascript">
+                                 <!--
+                                 writeTypeKeyGreeting(commenter_name, 6990);
+                                 //-->
+                                 </script>
+                              
+                                 
+
+                                 <div id="comments-open-data">
+                                    <div id="name-email">
+                                       <p>
+                                          <label for="comment-author">名前:</label>
+                                          <input id="comment-author" name="author" size="30" />
+                                       </p>
+                                       <p>
+                                          <label for="comment-email">メールアドレス:</label>
+                                          <input id="comment-email" name="email" size="30" />
+                                       </p>
+                                    </div>
+
+                                    <p>
+                                       <label for="comment-url">URL:</label>
+                                       <input id="comment-url" name="url" size="30" />
+                                    </p>
+                                    <p>
+                                       <label for="comment-bake-cookie"><input type="checkbox"
+                                          id="comment-bake-cookie" name="bakecookie" onclick="if (!this.checked) forgetMe(document.comments_form)" value="1" />
+                                          この情報を登録しますか?</label>
+                                    </p>
+                                 </div>
+
+                                 <p id="comments-open-text">
+                                    <label for="comment-text">コメント: </label>
+                                    <textarea id="comment-text" name="text" rows="15" cols="50"></textarea>
+                                 </p>
+                                 <div id="comments-open-footer" class="comments-open-footer">
+                                    <input type="submit" accesskey="v" name="preview" id="comment-preview" value="確認" />
+                                    <input type="submit" accesskey="s" name="post" id="comment-post" value="投稿" />
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                        
+                     </div>
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">検索</h2>
+                         <div class="module-content">
+                            <form method="get" action="http://www.yama-kei.org/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="12" />
+                               <label for="search" accesskey="4">ブログを検索: </label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="検索" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">2010&#24180;02&#26376;03&#26085; 21:12に投稿されたエントリーのページです。</p>
+                             <p>ひとつ前の投稿は「<a href="http://www.yama-kei.org/local_train_nakameguro/2010/02/post_110.html">ウィンターロード・あれこれ</a>」です。</p>
+
+                             <p>次の投稿は「<a href="http://www.yama-kei.org/local_train_nakameguro/2010/02/bicycling_science_david_gordon_1.html">Bicycling Science / David Gordon Wilson</a>」です。</p>
+
+                             <p>他にも多くのエントリーがあります。<a href="http://www.yama-kei.org/local_train_nakameguro/">メインページ</a>や<a href="http://www.yama-kei.org/local_train_nakameguro/archives.html">アーカイブページ</a>も見てください。</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="http://www.yama-kei.org/local_train_nakameguro/atom.xml">このブログのフィードを取得</a><br />
+                            [<a href="http://www.sixapart.jp/about/feeds">フィードとは</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.jp/movabletype/">Movable Type 3.36</a>
+                         </div>
+                      </div>
+
+                      <div class="module-content">
+おすすめ自転車関連本
+<SCRIPT charset="utf-8" type="text/javascript" src="http://ws.amazon.co.jp/widgets/q?ServiceVersion=20070822&MarketPlace=JP&ID=V20070822/JP/pastelcoloure-22/8001/2a48a3a9-c2dc-4b41-902c-9afcbf702492"> </SCRIPT> <NOSCRIPT><A HREF="http://ws.amazon.co.jp/widgets/q?ServiceVersion=20070822&MarketPlace=JP&ID=V20070822%2FJP%2Fpastelcoloure-22%2F8001%2F2a48a3a9-c2dc-4b41-902c-9afcbf702492&Operation=NoScript">Amazon.co.jp ウィジェット</A></NOSCRIPT>
+</div><script type="text/javascript"><!--
+google_ad_client = "pub-7948296006321133";
+/* 160x600, 作成済み 09/06/03 */
+google_ad_slot = "9835747242";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9164977-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>
